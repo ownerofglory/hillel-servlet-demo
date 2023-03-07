@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="https://java.sun.com/xml/ns/javaee" xsi:schemaLocation="https://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+
+    <context-param>
+        <param-name>connection-string</param-name>
+        <param-value>jdbc:sqlite:/Users/ownerofglory/projects/hillel/hillel-javax-demo/todos.db</param-value>
+    </context-param>
+
+<!--    <servlet>-->
+<!--        <servlet-name>hello-servlet</servlet-name>-->
+<!--        <servlet-class>ua.hillel.web.HelloServlet</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>hello-servlet</servlet-name>-->
+<!--        <url-pattern>/hello</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <servlet>
+        <servlet-name>index-page</servlet-name>
+        <jsp-file>/WEB-INF/index.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>index-page</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>ua.hillel.web.AppContextListener</listener-class>
+    </listener>
+</web-app>
