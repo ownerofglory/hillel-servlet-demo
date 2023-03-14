@@ -34,6 +34,7 @@ public class TodoAppServlet extends HttpServlet {
 
             TodoList activeList = todoLists.get(0);
 
+            // comment
             int activeListId;
             if (queryString != null) {
                 String idString = queryString.split("=")[1];
