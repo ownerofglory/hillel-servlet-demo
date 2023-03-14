@@ -38,4 +38,49 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                <version>1.10.5</version>
+                <configuration>
+                    <container>
+                        <containerId>tomcat9x</containerId>
+                        <type>remote</type>
+                    </container>
+                    <configuration>
+                        <type>runtime</type>
+                        <properties>
+                            <cargo.hostname>host</cargo.hostname>
+                            <cargo.protocol>https</cargo.protocol>
+                            <cargo.port>443</cargo.port>
+                            <cargo.servlet.port>443</cargo.servlet.port>
+                            <cargo.remote.username>user</cargo.remote.username>
+                            <cargo.remote.password>password</cargo.remote.password>
+                            <cargo.tomcat.manager.url>url</cargo.tomcat.manager.url>
+                        </properties>
+                    </configuration>
+
+                    <artifactInstaller>
+                        <groupId>org.ow2.jonas.assemblies.profiles</groupId>
+                        <artifactId>jonas-full</artifactId>
+                        <version>5.2.1</version>
+                        <classifier>bin</classifier>
+                    </artifactInstaller>
+                    <deployables>
+                        <deployable>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <type>war</type>
+                            <properties>
+                                <context>hillel-app</context>
+                            </properties>
+                        </deployable>
+                    </deployables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

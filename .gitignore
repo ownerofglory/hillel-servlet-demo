@@ -20,4 +20,4 @@ web/.project
 web/.settings/
 web/target/
 todo-app.db
-*.db
+#*.db

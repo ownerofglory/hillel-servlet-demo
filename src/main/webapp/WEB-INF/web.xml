@@ -6,16 +6,6 @@
         <param-value>/todos.db</param-value>
     </context-param>
 
-<!--    <servlet>-->
-<!--        <servlet-name>hello-servlet</servlet-name>-->
-<!--        <servlet-class>ua.hillel.web.HelloServlet</servlet-class>-->
-<!--    </servlet>-->
-
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>hello-servlet</servlet-name>-->
-<!--        <url-pattern>/hello</url-pattern>-->
-<!--    </servlet-mapping>-->
-
     <filter>
         <filter-name>auth-filter</filter-name>
         <filter-class>ua.hillel.web.filter.LoggingFilter</filter-class>
