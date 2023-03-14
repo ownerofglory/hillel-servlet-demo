@@ -63,6 +63,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Build war
-        run: mnv --batch-mode package
+        run: mvn --batch-mode package
       - name: Deploy project
         run: mvn --batch-mode cargo:deploy -Dtomcat.host=${{ secrets.TOMCAT_HOST }} -Dtomcat.user=${{ secrets.TOMCAT_USER }} -Dtomcat.password=${{ secrets.TOMCAT_PASSWORD }} -Dtomcat.managerUrl=${{ secrets.TOMCAT_MANAGER_URL }}
