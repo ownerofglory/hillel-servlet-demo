@@ -51,5 +51,7 @@ jobs:
           distribution: 'temurin'
       - name: Build war
         run: mvn --batch-mode package
+      - name: Undeploy existing war
+        run: mvn --batch-mode cargo:undeploy -Dtomcat.host=${{ secrets.TOMCAT_HOST }} -Dtomcat.user=${{ secrets.TOMCAT_USER }} -Dtomcat.password=${{ secrets.TOMCAT_PASSWORD }} -Dtomcat.managerUrl=${{ secrets.TOMCAT_MANAGER_URL }}
       - name: Deploy project
         run: mvn --batch-mode cargo:deploy -Dtomcat.host=${{ secrets.TOMCAT_HOST }} -Dtomcat.user=${{ secrets.TOMCAT_USER }} -Dtomcat.password=${{ secrets.TOMCAT_PASSWORD }} -Dtomcat.managerUrl=${{ secrets.TOMCAT_MANAGER_URL }}
